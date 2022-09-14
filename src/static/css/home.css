@@ -1,0 +1,108 @@
+
+/* parent div positioning and size scaling */
+.home-base {
+  max-width: 920px;
+  width: 100%;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* This is for positioning the 404 page & backdropping using z-index */
+.home-base .txt-disp {
+  position: absolute;
+  height: 100px;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+/* This would change the coloring & look of 404 display */
+.home-base .txt-disp h1 {
+  color: #dcdcdc;
+  font-weight: 900;
+  font-size: 276px;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-transform: uppercase;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.home-base .txt-disp h2 {
+  color: #dcdcdc;
+  font-weight: 900;
+  font-size: 100px;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-transform: uppercase;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* Sizing and bolding the <h2> tagged text */
+.home-base h2 {
+  font-size: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Sizing and bolding the <p> tagged text */
+.home-base p {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.home-animate {
+  /* animation: typing 2s linear 0s infinite alternate; */
+  /* animation: typing 8s steps(60, end); */
+  animation: openclose 5s ease-in-out infinite;
+}
+
+.home-animate::after  {
+  content: "";
+  width: 10px;
+  height: 40px;
+  background: #ec7fff;
+  display: inline-block;
+  animation: cursor-blink 1.5s steps(2) infinite;
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .home-base .txt-disp h1 {
+    font-size: 162px;
+  }
+
+  .home-base h2 {
+    font-size: 26px;
+  }
+}
